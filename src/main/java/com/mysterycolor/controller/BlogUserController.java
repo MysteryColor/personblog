@@ -1,6 +1,7 @@
 package com.mysterycolor.controller;
 
 
+import com.mysterycolor.common.lang.Result;
 import com.mysterycolor.service.BlogUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,6 @@ public class BlogUserController {
 
     @GetMapping("/index")
     public Object index(){
-        return blogUserService.getById(1l);
+        return Result.success(blogUserService.getById(1l));
     }
 }
